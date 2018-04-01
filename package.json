@@ -1,0 +1,14 @@
+{
+  "name": "nn6",
+  "version": "0.0.1",
+  "description": "A Neural Network Framework",
+  "main": "nn6.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "ccckmit",
+  "license": "ISC",
+  "dependencies": {
+    "j6": "^1.0.2"
+  }
+}
