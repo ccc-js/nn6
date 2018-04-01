@@ -7,8 +7,7 @@
     "test": "mocha"
   },
   "author": "ccckmit",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
-    "j6": "^1.0.2"
   }
 }
