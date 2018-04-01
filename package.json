@@ -2,7 +2,7 @@
   "name": "nn6",
   "version": "0.0.2",
   "description": "A Neural Network Framework",
-  "main": "nn6.js",
+  "main": "lib/nn6.js",
   "scripts": {
     "test": "mocha"
   },
