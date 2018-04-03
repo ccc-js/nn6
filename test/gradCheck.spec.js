@@ -1,11 +1,10 @@
 const nn6 = require('../lib/nn6')
-var ok = require('assert').ok
-
-let step = 0.000001
+const G = nn6.gate
+const ok = require('assert').ok
+const step = 0.000001
 
 function checkGradient(gateClass, options = {}) {
-  let G = nn6.Graph
-  let {x, y, f} = G.newVariables(['x', 'y', 'f'])
+  let {x, y, f} = nn6.node.newVariables(['x', 'y', 'f'])
   x.value = 5.0
   y.value = 3.0
   f.grad = 1.0
@@ -34,40 +33,40 @@ function checkGradient(gateClass, options = {}) {
 describe('nn6', function() {
   describe('gradient check', function() {
     it('check Sum', function() {
-      checkGradient(nn6.Sum)
+      checkGradient(G.Sum)
     })
     it('check Times', function() {
-      checkGradient(nn6.Times)
+      checkGradient(G.Times)
     })
     it('check Neg', function() {
-      checkGradient(nn6.Neg)
+      checkGradient(G.Neg)
     })
     it('check Rev', function() {
-      checkGradient(nn6.Rev)
+      checkGradient(G.Rev)
     })
     it('check Exp', function() {
-      checkGradient(nn6.Exp)
+      checkGradient(G.Exp)
     })
     it('check Relu', function() {
-      checkGradient(nn6.Relu)
+      checkGradient(G.Relu)
     })
     it('check Sigmoid', function() {
-      checkGradient(nn6.Sigmoid)
+      checkGradient(G.Sigmoid)
     })
     it('check Add', function() {
-      checkGradient(nn6.Add)
+      checkGradient(G.Add)
     })
     it('check Sub', function() {
-      checkGradient(nn6.Sub, {checky: true})
+      checkGradient(G.Sub, {checky: true})
     })
     it('check Mul', function() {
-      checkGradient(nn6.Mul)
+      checkGradient(G.Mul)
     })
     it('check Div', function() {
-      checkGradient(nn6.Div, {checky: true})
+      checkGradient(G.Div, {checky: true})
     })
     it('check Pow', function() {
-      checkGradient(nn6.Pow, {checky: true})
+      checkGradient(G.Pow, {checky: true})
     })
   })
 })
