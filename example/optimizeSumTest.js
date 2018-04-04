@@ -1,7 +1,7 @@
 const nn6 = require('../lib/nn6')
 // f(x,y) = x^2 + 2xy + y^2 + 2
-// 在 x=0 y=0 時，有最小值 2
-class G1 extends nn6.net.Graph {
+// 在 y=-x 時，有最小值 2
+class Net1 extends nn6.net.Net {
   constructor () {
     super()
     let v = this.addVariables(['x', 'y', 'xx', '_2xy', 'yy', 'f'])
@@ -17,8 +17,7 @@ class G1 extends nn6.net.Graph {
       new nn6.gate.Times([v.y, v.y], v.yy),
       new nn6.gate.Sum([v.xx, v._2xy, v.yy, c2], v.f)
     ])
-    console.log('vars=%j', this.vars)
   }
 }
 
-nn6.GradientDescendent(new G1(), 300)
+nn6.GradientDescendent(new Net1(), 300)
