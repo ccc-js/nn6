@@ -6,7 +6,7 @@ const nn6 = require('../lib/nn6')
 class Net1 extends nn6.net.Net {
   constructor () {
     super()
-    let {x, y, r1, r2, _2x, f} = this.addVariables(['x', 'y', 'r1', 'r2', '_2x', 'f'])
+    let {x, y, r1, r2, f} = this.addVariables(['x', 'y', 'r1', 'r2', 'f'])
     this.setDumpVariables(['x', 'y', 'r1', 'r2', 'f'])
     let [c1, c2, c3] = nn6.node.newConstants([1, 2, 3])
     this.out = f
