@@ -7,16 +7,15 @@ class Net1 extends nn6.net.Net {
     super()
     let v = this.addVariables(['x', 'y', 'xx', 'yy', 'f'])
     this.setDumpVariables(['x', 'y', 'f'])
-    let [c2] = this.newConstants([2])
-    this.addInputs([v.x, v.y])
+    let [c2] = nn6.node.newConstants([2])
     v.x.value = 1
     v.y.value = 2
-    this.setOutput(v.f)
-    this.addGates([
+    this.out = v.f
+    this.gates = [
       new nn6.gate.Mul([v.x, v.x], v.xx),
       new nn6.gate.Mul([v.y, v.y], v.yy),
       new nn6.gate.Add([v.xx, v.yy], v.f)
-    ])
+    ]
   }
 }
 
