@@ -8,8 +8,7 @@ class Net1 extends nn6.net.Net {
     super()
     let {a, b, x, y, f} = this.addVariables(['a', 'b', 'x', 'y', 'f'])
     this.setDumpVariables(['x', 'y', 'f'])
-    // let [c1, c2, c3] = nn6.node.newConstants([1, 2, 3])    
-    this.inputs = [[ a, b ]]
+    this.inputs = [ a, b ]
     this.out = [f]
     this.gates = [
       new nn6.net.VDot([[a, b], [x, y]], f, this),
