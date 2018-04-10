@@ -7,7 +7,7 @@ class Net1 extends nn6.net.Net {
   constructor () {
     super()
     let {x1, x2, w0, w1, w2, s, f} = this.addVariables(['x1', 'x2', 'w0', 'w1', 'w2', 's', 'f'])
-    this.setDumpVariables(['x1', 'x2', 'f'])
+    this.setDumpVariables(['x1', 'x2', 'w0', 'w1', 'w2','s', 'f'])
     let [n1] = nn6.node.newConstants([-1])
     this.inputs = [ x1, x2 ]
     this.out = [ f ]
@@ -18,7 +18,7 @@ class Net1 extends nn6.net.Net {
   }
 }
 
-nn6.GradientLearning(new Net1(), [[0, 0], [0, 1], [1, 0], [1, 1]], [[0], [0], [0], [1]], 2000) // and
+nn6.GradientLearning(new Net1(), [[0, 0], [0, 1], [1, 0], [1, 1]], [[0], [0], [0], [1]], 1000) // and
 // nn6.GradientLearning(new Net1(), [[0, 0], [0, 1], [1, 0], [1, 1]], [[0], [1], [1], [1]], 2000) // or
 // nn6.GradientLearning(new Net1(), [[0, 0], [0, 1], [1, 0], [1, 1]], [[0], [1], [1], [0]], 2000) // xor
 
