@@ -1,6 +1,6 @@
 {
   "name": "nn6",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "A Neural Network Framework",
   "main": "lib/nn6.js",
   "scripts": {
