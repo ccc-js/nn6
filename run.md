@@ -3,6 +3,8 @@
 加了動量公式之後，終於成功了!
 
 ```
+const moment = 0.01
+...
 class Variable {
   adjust(step) {
     // 考慮動量 moment 與改變率 rate 的公式 (這個有錯，因為 learn 每次樣本都不一樣)
