@@ -39,8 +39,6 @@ const outs = [
    [1,0,0,0], // 8
    [1,0,0,1]  // 9
 ]
-// nn6.GradientLearning(new Net1(), [[0, 0], [0, 1], [1, 0], [1, 1]], [[0], [0], [0], [1]], 10000) // and
-// nn6.GradientLearning(new Net1(), [[0, 0], [0, 1], [1, 0], [1, 1]], [[0], [1], [1], [1]], 10000) // or
-// 前兩個 and, or 成功，但最後的 xor 還是失敗！
-nn6.GradientLearning(new Mlp7Seg(), inputs, outs, 20000) // xor
+
+nn6.GradientLearning(new Mlp7Seg(), inputs, outs, 5000)
 

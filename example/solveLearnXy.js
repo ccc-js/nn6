@@ -16,5 +16,5 @@ class Net1 extends nn6.net.Net {
   }
 }
 
-nn6.GradientLearning(new Net1(), [[2, 1], [1, 1]], [[3], [2]], 2000)
+nn6.GradientLearning(new Net1(), [[2, 1], [1, 1]], [[3], [2]], 300)
 
