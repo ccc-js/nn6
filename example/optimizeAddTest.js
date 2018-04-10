@@ -19,4 +19,4 @@ class Net1 extends nn6.net.Net {
   }
 }
 
-nn6.GradientDescendent(new Net1(), 300)
+nn6.GradientDescendent(new Net1(), 100)
