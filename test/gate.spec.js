@@ -68,5 +68,8 @@ describe('nn6', function() {
     it('check Pow', function() {
       checkGradient(G.Pow, {checky: true})
     })
+    it('check NPow', function() {
+      checkGradient(G.NPow(2))
+    })
   })
 })
