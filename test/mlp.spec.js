@@ -33,10 +33,10 @@ function checkGradient(netClass, options = {}) {
 describe('nn6', function() {
   describe('gradient check', function() {
     it('check Perceptron2', function() {
-      checkGradient(nn6.net.Perceptron2, {checky: true})
+      checkGradient(nn6.mlp.Perceptron2, {checky: true})
     })
     it('check Mlp2', function() {
-      checkGradient(nn6.net.Mlp2, {checky: true})
+      checkGradient(nn6.mlp.Mlp2, {checky: true})
     })
   })
 })
