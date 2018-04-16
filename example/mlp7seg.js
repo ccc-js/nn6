@@ -40,5 +40,5 @@ const outs = [
    [1,0,0,1]  // 9
 ]
 
-nn6.GradientLearning(new Mlp7Seg(), inputs, outs, 5000)
+nn6.gradientLearning(new Mlp7Seg(), inputs, outs, 5000)
 
