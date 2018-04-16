@@ -18,4 +18,3 @@ class Net1 extends nn6.net.Net {
 }
 
 nn6.gradientDescendent(new Net1(), 500)
-

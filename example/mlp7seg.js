@@ -8,7 +8,8 @@ class Mlp7Seg extends nn6.net.Net {
     this.inputs = [ a, b, c, d, e, f, g ]
     this.out = [ b3, b2, b1, b0 ]
     this.gates = [
-      new nn6.mlp.Mlp(this.inputs, 5, this.out, this)
+      // new nn6.mlp.Mlp(this.inputs, [5], this.out, this)
+      new nn6.mlp.Mlp(this.inputs, [5, 4], this.out, this)
     ]
   }
 }
