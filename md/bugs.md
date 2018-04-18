@@ -1,5 +1,31 @@
 # Bug
 
+## Gan 部分
+
+Gan, RGan 都沒有成功
+
+我在寫生成對抗網路 GAN 時，最後 Generator 生成的結果都會集中在單一的正確樣本上，而不會分散開來。
+
+這樣雖然生成的結果分數是很好，但是卻完全沒有通用性。
+
+請問有沒有人知道該如何避免 GAN 集中在單一正確樣本上的問題 ....
+
+Gan 演算法參考 -- https://medium.com/@devnag/generative-adversarial-networks-gans-in-50-lines-of-code-pytorch-e81b79659e3f
+
+程式： https://github.com/devnag/pytorch-generative-adversarial-networks/blob/master/gan_pytorch.py
+
+關鍵可能在能量函數 BCELoss 上
+
+criterion = nn.BCELoss()  # Binary cross entropy: http://pytorch.org/docs/nn.html#bceloss
+
+看來衡量函數應該是：Binary Cross Entropy
+
+1. 先產生 n 個輸入向量 (vectors[]) ，產生 n 個樣本 (samples[]) ，對應到 n 個正確答案 (facts[])。
+2. 預期第一個向量會產生第一個答案，第二個向量會產生第二個答案 ....
+3. 衡量函數用 Binary Cross Entropy (samples[], facts[])
+
+對於答案為實數值者，也可以採用 SquareError 。 sum((xi-yi)^2)
+
 ## 梯度下降法部分
 
 目前測試都正確，solveXy, solveMatXy, solveLearnXy, optimizeAddTest.js, optimizeSumTest.js 等都可以正常運作並找到解答！

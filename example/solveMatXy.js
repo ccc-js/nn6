@@ -12,7 +12,7 @@ class Net1 extends nn6.net.Net {
     this.out = f
     this.gates = [
       new nn6.net.MDot([[[c2, c1], [c1, c1]], [x, y]], [r1, r2], this),
-      new nn6.net.SqrtError([[r1, r2], [c3, c2]], f, this)
+      new nn6.net.SquareError([[r1, r2], [c3, c2]], f, this)
     ]
   }
 }

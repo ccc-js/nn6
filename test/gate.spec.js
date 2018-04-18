@@ -4,11 +4,12 @@ const ok = require('assert').ok
 const step = 0.000001
 
 function checkGradient(gateClass, options = {}) {
-  let {x, y, f} = nn6.node.newVariables(['x', 'y', 'f'])
+  let {x, y, f, g} = nn6.node.newVariables(['x', 'y', 'f', 'g'])
   x.value = 5.0
   y.value = 3.0
   f.grad = 1.0
-  let gate = new gateClass([x, y], f)
+  var gate = (gateClass === nn6.net.SoftmaxLayer) ? new gateClass([x, y], [f,g]) : new gateClass([x, y], f)
+  // let gate = new gateClass([x, y], f)
   gate.forward()
   let fxy = f.value
   gate.backward()
@@ -70,6 +71,9 @@ describe('nn6', function() {
     })
     it('check NPow', function() {
       checkGradient(G.NPow(2))
+    })
+    it('check SoftmaxLayer', function() {
+      checkGradient(nn6.net.SoftmaxLayer)
     })
   })
 })

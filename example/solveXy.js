@@ -14,7 +14,7 @@ class Net1 extends nn6.net.Net {
       new nn6.gate.Mul([c2, x], _2x),
       new nn6.gate.Add([_2x, y], r1),
       new nn6.gate.Add([x, y], r2),
-      new nn6.net.SqrtError([[r1, r2], [c3, c2]], f, this)
+      new nn6.net.SquareError([[r1, r2], [c3, c2]], f, this)
     ]
   }
 }

@@ -4,19 +4,19 @@ class Mlp7Seg extends nn6.net.Net {
   constructor () {
     super()
     let {a,b,c,d,e,f,g,b3,b2,b1,b0} = this.addVariables(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'b3', 'b2', 'b1', 'b0'])
-    this.setDumpVariables(['b3', 'b2', 'b1', 'b0'])
-    this.inputs = [ a, b, c, d, e, f, g ]
-    this.out = [ b3, b2, b1, b0 ]
+    this.setDumpVariables(['a', 'b', 'c', 'd', 'e', 'f', 'g']) // 'b3', 'b2', 'b1', 'b0', 
+    this.inputs = [ b3, b2, b1, b0 ]
+    this.out = [ a, b, c, d, e, f, g ]
     this.gates = [
       new nn6.mlp.Mlp(this.inputs, [5], this.out, this) // 成功
       // new nn6.mlp.Mlp(this.inputs, [5, 4], this.out, this) // 成功
-      // new nn6.mlp.Mlp(this.inputs, [5, 4, 5], this.out, this) // 還可以
+      // new nn6.mlp.Mlp(this.inputs, [5, 4, 5], this.out, this) // 成功
       // new nn6.mlp.Mlp(this.inputs, [5, 4, 5, 4], this.out, this) // 失敗
     ]
   }
 }
 
-const inputs = [
+const outs = [
 // A B C D E F G 
   [1,1,1,1,1,1,0], // 0
   [0,1,1,0,0,0,0], // 1
@@ -30,7 +30,7 @@ const inputs = [
   [1,1,1,1,0,1,1], // 9
 ]
 
-const outs = [
+const inputs = [
    [0,0,0,0], // 0
    [0,0,0,1], // 1
    [0,0,1,0], // 2
@@ -43,5 +43,5 @@ const outs = [
    [1,0,0,1]  // 9
 ]
 
-nn6.gradientLearning(new Mlp7Seg(), inputs, outs, 5000)
+nn6.gradientLearning(new Mlp7Seg(), inputs, outs, 10000)
 

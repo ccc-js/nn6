@@ -10,7 +10,7 @@ function checkGradient(netClass, options = {}) {
   y.value = 0.6
   f.grad = 1.0
   net.forward()
-  console.log('net.vars=%j', net.vars)
+  // console.log('net.vars=%j', net.vars)
   let fxy = f.value
   net.backward()
   // check x diff
