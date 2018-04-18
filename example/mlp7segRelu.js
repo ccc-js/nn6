@@ -10,7 +10,8 @@ class Mlp7Seg extends nn6.net.Net {
     this.out = [ o0, o1, o2, o3, o4, o5, o6, o7, o8, o9 ]
     this.gates = [
       // new nn6.mlp.Mlp(this.inputs, [5], this.out, this), // 成功
-      new nn6.mlp.Mlp(this.inputs, [8,10, 10], o, this, nn6.gate.LeakyRelu), // 改為 LeakyRelu 後就成功了！
+      new nn6.mlp.Mlp(this.inputs, [10], o, this, nn6.gate.LeakyRelu), // 改為 LeakyRelu 後就成功了！
+      // new nn6.mlp.Mlp(this.inputs, [8,10], o, this, nn6.gate.LeakyRelu), // 改為 LeakyRelu 後就成功了！
       new nn6.net.SoftmaxLayer(o, this.out)
     ]
     this.fLoss = nn6.loss.crossEntropy
