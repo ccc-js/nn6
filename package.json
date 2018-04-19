@@ -8,5 +8,7 @@
   },
   "author": "ccckmit",
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {
+    "numjs": "^0.15.1"
+  }
 }
